@@ -1,4 +1,4 @@
-export default function Assignments() {
+const Assignments=()=> {
     return (
       <div id="wd-assignments">
         <input id="wd-search-assignment"
@@ -13,21 +13,29 @@ export default function Assignments() {
             <a className="wd-assignment-link"
               href="#/Kanbas/Courses/1234/Assignments/123">
               A1 - ENV + HTML
-            </a>
+            </a><br/>
+            <p> Multiple Modules | <b>Not available until </b> May 6 at 12;00am | </p><br/>
+            <p><b>Due</b> May 13 at 11.59 pm | 100 pts</p> 
           </li>
           <li className="wd-assignment-list-item">
           <a className="wd-assignment-link"
               href="#/Kanbas/Courses/1234/Assignments/123">
               A2 - CSS + BOOTSTRAP
-            </a>
+            </a> <br/>
+            <p> Multiple Modules | <b>Not available until </b> May 13 at 12;00am | </p><br/>
+            <p><b>Due</b> May 20 at 11.59 pm | 100 pts</p> 
           </li>
           <li className="wd-assignment-list-item">
           <a className="wd-assignment-link"
               href="#/Kanbas/Courses/1234/Assignments/123">
               A3 - JAVASCRIPT + REACT
-            </a>
+            </a><br/>
+            <p> Multiple Modules | <b>Not available until </b> May 20 at 12;00am | </p><br/>
+            <p><b>Due</b> May 27 at 11.59 pm | 100 pts</p> 
           </li>
         </ul>
       </div>
   );}
+
+  export default Assignments;
   

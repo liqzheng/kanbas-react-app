@@ -1,23 +1,22 @@
 import Lab1 from "./Lab1";
-import Lab2 from "./Lab2";
-import {Routes,Route} from "react-router";
+import { Route, Routes, Navigate } from "react-router";
 import TOC from "./TOC";
-export default function Labs() {
+import Lab2 from "./Lab2";
+import Lab3 from "./Lab3";
+const Labs=()=> {
   return (
-    <div id="wd-labs">
-      <h1>Liqiong Zheng</h1>
-      <TOC />;
-      <h1>Labs</h1>
-      <Routes>
-        <Route path="/Lab1" element={<Lab1 />}/>
-        <Route path="/Lab2" element={<Lab2 />}/>
-        <Route path="/Lab3" element={ <h2>Lab 3</h2>}/>
-        
-
-       
-      </Routes>
+    <div className="container">
       
-   
+      <h1>Labs</h1>
+      <TOC />
+      <Routes>
+        <Route path="/" element={<Navigate to="Lab1" />} />
+        <Route path="Lab1" element={<Lab1 />} />
+        <Route path="Lab2" element={<Lab2 />} />
+        <Route path="Lab3" element={<Lab3 />} />
 
+      </Routes>
     </div>
-);}
+  );
+}
+export default Labs;

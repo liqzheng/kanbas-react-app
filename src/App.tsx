@@ -1,10 +1,12 @@
 
+
 import React from "react";
 import Labs from "./Labs";
 import Kanbas from "./Kanbas";
 
 import { HashRouter, Link, Route, Routes, Navigate } from "react-router-dom";
-export default function App(){
+
+const App=()=>{
   return (
    
       <HashRouter>
@@ -14,7 +16,7 @@ export default function App(){
 
 
             <Routes>
-            <Route path="/" element={<Navigate to="Labs"/>} />
+            < Route path="/" element={<Navigate to="Labs"/>} />
 
               <Route path="/Labs/*" element={<Labs />} />
 
@@ -33,3 +35,4 @@ export default function App(){
 
 
 
+export default App;
