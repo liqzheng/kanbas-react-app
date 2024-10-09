@@ -4,8 +4,10 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEdit from "./Assignments";
-import PeopleTable from "./People/Table";
+
 import { FaAlignJustify } from "react-icons/fa";
+import AssignmentEditor from "./Assignments/Editor";
+import PeopleTable from "./People";
 
 const Courses=()=> {
   return (
@@ -24,10 +26,10 @@ const Courses=()=> {
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />
-            <Route path="Modules" element={<Modules />} />
+            <Route path="/Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
-            <Route path="Assignments/:aid" element={<AssignmentEdit />} />
-            <Route path="People/Table" element={<PeopleTable />} />
+            <Route path="Assignments/:aid" element={<AssignmentEditor />} />
+            <Route path="People" element={<PeopleTable />} />
 
           </Routes>
 

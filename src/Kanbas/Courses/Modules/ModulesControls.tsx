@@ -1,7 +1,7 @@
 
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
-const  ModulesControls =()=> {
+const ModulesControls = () => {
   return (
     <div id="wd-modules-controls" className="text-nowrap">
       <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-1 float-end">
@@ -23,6 +23,22 @@ const  ModulesControls =()=> {
               <GreenCheckmark />
               Publish modules only</a>
           </li>
+
+
+
+          <li>
+            <a id="wd-unpublish-all-modules-and-items" className="dropdown-item" href="#">
+              <GreenCheckmark />
+              Unpublish all modules and items
+            </a>
+          </li>
+          <li>
+            <a id="wd-unpublish-modules-only" className="dropdown-item" href="#">
+              <GreenCheckmark />
+              Unpublish modules only
+            </a>
+          </li>
+
           {/* Create two more items with IDs wd-unpublish-all-modules-and-items and
               wd-unpublish-modules-only with labels Unpublish all modules and items
               and Unpublish modules only */}
@@ -30,6 +46,7 @@ const  ModulesControls =()=> {
       </div>
       {/* Implement the View Progress and Collapse All buttons with IDs wd-view-progress and wd-collapse-all */}
     </div>
-);}
+  );
+}
 
-export default  ModulesControls;
+export default ModulesControls;

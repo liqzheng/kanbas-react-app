@@ -1,54 +1,44 @@
-import { MdDoNotDisturbAlt } from "react-icons/md";
+import { MdDoNotDisturbAlt, MdPause, MdPreview } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
 import { BiImport } from "react-icons/bi";
 import { LiaFileImportSolid } from "react-icons/lia";
-
-
+import { AiFillDelete } from "react-icons/ai";
+{/* Find more icons */}
 const CourseStatus=()=> {
-    return (
-      <div id="wd-course-status" style={{ width: "300px" }}>
-        <h2>Course Status</h2>
-        <div className="d-flex">
+  return (
+    <div id="wd-course-status" style={{ width: "300px" }}>
+      <h2>Course Status</h2>
+      <div className="d-flex">
         <div className="w-50 pe-1">
-
-
-        <button className="btn btn-lg btn-secondary w-100 text-nowrap "> <MdDoNotDisturbAlt className="me-2 fs-5" />Unpublish</button> </div>
+          <button className="btn btn-lg btn-secondary w-100 text-nowrap ">
+            <MdDoNotDisturbAlt className="me-2 fs-5" /> Unpublish </button>
+        </div>
         <div className="w-50">
-        
-        <button className="btn btn-lg btn-success w-100">
-        <FaCheckCircle className="me-2 fs-5" />
-          Publish</button> </div> </div><br/>
-       
-
-      {/* Import Existing Content */}
-      
-        <button className="btn btn-lg btn-secondary w-100 mt-1 text-start"> <BiImport className="me-2 fs-5" />Import Existing Content</button>
-      
-     
-      
-      
-        <button>Import from Commons</button>
-     
-     
-      <br />
-      
-        <button  className="btn btn-lg btn-secondary w-100 mt-1 text-start"> <BiImport className="me-2 fs-5" /> Import Existing Content </button>
+          <button className="btn btn-lg btn-success w-100">
+            <FaCheckCircle className="me-2 fs-5" /> Publish </button>
+        </div>
+      </div><br />
+      <button className="btn btn-lg btn-secondary w-100 mt-1  text-start">
+        <BiImport className="me-2 fs-5" /> Import Existing Content </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <LiaFileImportSolid className="me-2 fs-5" /> Import from Commons </button>
 
         <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        <LiaFileImportSolid className="me-2 fs-5" /> Import from Commons </button>
-      
-      
-     </div>
+        <AiFillDelete className="me-2 fs-5" /> Delete Course
+      </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <MdPause className="me-2 fs-5" /> Pause Course
+      </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <MdPreview className="me-2 fs-5" /> Preview Course
+      </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <BiImport className="me-2 fs-5" /> Export Course Content
+      </button>
+      {/* Complete the rest of the buttons */}
+    </div>
+);}
 
-
-      
-      
-
-    
-
-      
-  );
-}
 
        
 
