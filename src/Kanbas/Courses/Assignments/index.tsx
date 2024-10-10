@@ -1,73 +1,64 @@
-import React from "react";
 import { BsGripVertical } from "react-icons/bs";
-import { FaSearch, FaPlus } from "react-icons/fa";
+//import AssignmentControls from "./AssignmentControls";
+import { RiArrowDropDownFill } from "react-icons/ri";
+//import AssignmentControlButtons from "./AssignmentControlButtons";
 import { IoEllipsisVertical } from "react-icons/io5";
-import GreenCheckmark from "../Modules/GreenCheckmark"; // Adjust the import path as necessary
-
-const Assignments = () => {
-  return (
-    <div id="wd-assignments" className="container mt-4">
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <div className="input-group">
-          <span className="input-group-text">
-            <FaSearch />
-          </span>
-          <input
-            type="text"
-            className="form-control me=4 width= 50%"
-            placeholder="Search"
-            aria-label="Search for Assignment" 
-          />
+const  Assignments=() =>{
+    return (
+      <div id="wd-assignments">
+       
+        <input id="wd-search-assignment"
+               placeholder="Search for Assignments" />
+        <button id="wd-add-assignment-group">+ Group</button>
+        <button id="wd-add-assignment">+ Assignment</button>
+        <div className="wd-assignment-title list-group-item p-0 mb-5 fs-5 border-gray">
+        <div className="wd-assignment-title p-3 ps-2 bg-secondary">
+                <BsGripVertical className="me-1 fs-3"/>
+                <RiArrowDropDownFill className="me-2 fs-1" type="button"/>
+                ASSIGNMENTS
+                <IoEllipsisVertical className="float-end fs-3"/>
+                <button className="float-end" style={{ border: "none", background: "none", outline: "none" }}>+</button>
+                <span className="float-end" style={{marginRight:"20px"}}><button style={{ borderRadius: "10px"}}>40% of Total</button></span>
+            </div>
+       
         </div>
-        <div>
-          <button className="btn btn-primary width =20% me-2">
-            <FaPlus /> Group
-          </button>
-          <button className="btn btn-primary width =30% color = red" >
-            <FaPlus /> Assignment
-          </button>
-        </div>
+        <ul className="wd-assignment-list list-group rounded-0">
+        <li className="wd-assignment-list-item list-group-item p-3 ps-1 wd-lesson">
+                   
+                    <div style={{marginLeft:"75px"}}>
+                        <a className="wd-assignment-link text-black"
+                            href="#/Kanbas/Courses/1234/Assignments/123"
+                            style={{textDecoration:"none"}}>
+                              <strong>A1 - ENV + HTML</strong>
+                        </a>
+                        <br/>
+                        <span><a className="wd-modules-list-link text-danger"
+                            href="https://www.google.com" style={{textDecoration:"none"}}>Multiple Modules</a> | <strong>Not available until</strong> May 6 at 12:00 am | </span>
+                        <br />
+                        <span>
+                            <strong>Due</strong> May 13 at 11:59 pm | 100 pts
+                        </span>
+                    </div>
+                </li>
+      
+                <li className="wd-assignment-list-item list-group-item p-3 ps-1 wd-lesson">
+                 
+                    <a className="wd-assignment-link text-black"
+                            href="#/Kanbas/Courses/1234/Assignments/123"
+                            style={{textDecoration:"none"}}> <strong>A2 - CSS + BOOTSTRAP</strong>
+            </a><p>Multiple Modules | <strong>Not Available until</strong> May 13 at 12:00 am | <strong>Due</strong> May 20 at 11:59pm | 100pts</p>
+          </li>
+          <li className="wd-assignment-list-item list-group-item p-3 ps-1 wd-lesson">
+                   
+                    <a className="wd-assignment-link text-black"
+                            href="#/Kanbas/Courses/1234/Assignments/123"
+                            style={{textDecoration:"none"}}> <strong>A3 - JAVASCRIPT + REACT</strong>
+            </a><p>Multiple Modules | <strong>Not Available until</strong> May 13 at 12:00 am | <strong>Due</strong> May 20 at 11:59pm | 100pts</p>
+          </li>
+              
+            
+        </ul>
+     
       </div>
-
-      <div className="wd-title d-flex justify-content-between align-items-center bg-secondary text-white p-3">
-        <div className="d-flex align-items-left">
-          <BsGripVertical className="me-2 fs-3" />
-          <h2>ASSIGNMENTS</h2>
-        </div>
-        <span className="badge bg-success rouder = 5px" >40% of Total <FaPlus /></span>
-      </div>
-
-      <ul className="list-group mt-3">
-        <li className="list-group-item p-3 border-start border-3 border-success">
-          <h3>A1</h3>
-          <div className="mb-2">
-            <span>Multiple Modules</span> | <span>Not Available until May 6 at 12:00 AM</span>
-          </div>
-          <p>
-            <span>Due: </span> May 13 at 11:59 PM | <span>100 pts</span>
-          </p>
-          <div>
-            <GreenCheckmark /> <IoEllipsisVertical className="fs-4" />
-          </div>
-        </li>
-        
-        <li className="list-group-item p-3 border-start border-3 border-success">
-          <h3>A2</h3>
-          <div className="mb-2">
-            <span>Multiple Modules</span> | <span>Not Available until May 13 at 12:00 AM</span>
-          </div>
-          <p>
-            <span>Due: </span> May 20 at 11:59 PM | <span>100 pts</span>
-          </p>
-          <div>
-            <GreenCheckmark /> <IoEllipsisVertical className="fs-4" />
-          </div>
-        </li>
-        
-        {/* Add more assignments as needed */}
-      </ul>
-    </div>
-  );
-};
-
-export default Assignments;
+  );}
+  export default  Assignments;
