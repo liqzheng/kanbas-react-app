@@ -21,10 +21,33 @@ import ScreenSizeLable from "./ScreenSizeLable";
 import Zindex from "./Zindex";
 export default function Lab2() {
     return (
+        
 
 
 
         <div className="container">
+            <BackgroundColors />
+            <BootstrapForms />
+            <BootstrapGrids />
+
+            <BootstrapLists />
+            <BootstrapNavigation />
+            <BootstrapTables />
+            <Borders />
+            <Corners />
+            <Dimensions />
+            <Flex />
+            <Float />
+
+            <ForegroundColors />
+            <GridLayout />
+            <Margins />
+            <Padding />
+            <Positions />
+            <ReactIcons />
+            <ScreenSizeLable />
+            <Zindex />
+
             <h2>Lab 2 - Cascading Style Sheets</h2>
             <h3>Styling with the STYLE attribute</h3>
             <p  >Style attribute allows configuring look and feel
@@ -81,37 +104,9 @@ export default function Lab2() {
 
 
 
-            <Routes>
-
-                <Route path="/BackgroudColors" element={<BackgroundColors />} />
-                <Route path="/BootstrapForms" element={<BootstrapForms />} />
-                <Route path="/BootstrapGrids" element={<BootstrapGrids />} />
-                <Route path="/BootstrapLists" element={<BootstrapLists />} />
-                <Route path="/BootstrapNavigation" element={<BootstrapNavigation />} />
-                <Route path="/BootstrapTables" element={<BootstrapTables />} />
-                <Route path="/BootstrapTables" element={<BootstrapTables />} />
-                <Route path="/Borders" element={<Borders />} />
-                <Route path="/Corners" element={<Corners />} />
-                <Route path="/Dimensions" element={<Dimensions />} />
-                <Route path="/Flex" element={<Flex />} />
-                <Route path="/Float" element={<Float />} />
-                <Route path="/ForegroundColors" element={<ForegroundColors />} />
-                <Route path="/GridLayout" element={<GridLayout />} />
-                <Route path="/Margins" element={<Margins />} />
-                <Route path="/Padding" element={<Padding />} />
-                <Route path="/Positions" element={<Positions />} />
-                <Route path="/ReactIcons" element={<ReactIcons />} />
-                <Route path="/ReactIcons" element={<ReactIcons />} />
-                <Route path="/ScreenSizeLable" element={<ScreenSizeLable />} />
-                <Route path="/Zindex" element={<Zindex />} />
-                <Route path="/Inbox" element={<h1>Inbox</h1>} />
-
-
-            </Routes>
-
-
-
-        </div>
+            
+</div>
+       
 
 
     )
