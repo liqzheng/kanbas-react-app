@@ -7,7 +7,7 @@ const Home=()=> {
     <div className="d-flex" id="wd-home">
       <div className="flex-fill">
         <Modules />
-        </div>
+      </div>
 
 
       <div className="d-none d-md-block">    

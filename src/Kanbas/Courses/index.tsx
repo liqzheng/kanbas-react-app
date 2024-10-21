@@ -8,7 +8,7 @@ import { courses } from "../Database";
 
 import { FaAlignJustify } from "react-icons/fa";
 import AssignmentEditor from "./Assignments/Editor";
-import PeopleTable from "./People";
+import PeopleTable from "./People/Table";
 
 const Courses=()=> {
   const { cid } = useParams();
@@ -36,8 +36,7 @@ const Courses=()=> {
             <Route path="Assignments" element={<Assignments />} />
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
             <Route path="People" element={<PeopleTable />} />
-
-          </Routes>
+         </Routes>
 
         </div>
 
