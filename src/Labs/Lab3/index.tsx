@@ -2,15 +2,19 @@ import VariablesAndConstants from "./VariablesAndConstants";
 import Add from "./Add";
 import Square from "./Square";
 import Highlight from "./Highlight";
+import AddPathParameters from "./AddPathParameters";
 
 
 export default function Lab3() {
+    console.log('Hello World!');
     return (
       <div id="wd-lab3">
         <h3>Lab 3</h3>
         <VariablesAndConstants/>
         <Add a={3} b={4} />
         <h4>Square of 4</h4>
+        <AddPathParameters />
+
       <Square>4</Square>
       <Highlight>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipitratione eaque illo minus cum, saepe totam

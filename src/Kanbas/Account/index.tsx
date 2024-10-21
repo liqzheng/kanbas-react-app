@@ -3,7 +3,7 @@ import Signin from "./Signin";
 import Signup from "./Signup";
 import { Routes, Route, Navigate } from "react-router";
 import AccountNavigation from "./Navigation";
-export default function Account() {
+const Account=()=> {
     return (
         <div id="wd-account-screen">
             <h2>Account</h2>
@@ -35,3 +35,4 @@ export default function Account() {
         </div>
     );
 }
+export default Account;

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-export default function Profile() {
+const Profile=()=> {
   return (
     <div id="wd-profile-screen">
       <h3>Profile</h3>
@@ -19,3 +19,4 @@ export default function Profile() {
       <Link to="/Kanbas/Account/Signin" >Sign out</Link>
     </div>
 );}
+export default Profile;
