@@ -1,7 +1,19 @@
+
+import React from "react";
+import { useParams ,Link} from "react-router-dom";
+import { assignments } from "../../Database";
+import * as db from "../../Database";
+
+
 const  AssignmentEditor=() =>{
+
+    const { courseId, assignmentId } = useParams();
+
+    const assignment = assignments.find((a)=> a._id===assignmentId);
+    
     return (
         <div id="wd-assignments-editor" style={{marginLeft:"2%", marginRight:"2%"}}>
-        <label htmlFor="wd-name" >Assignment Name</label>
+        <label htmlFor="wd-name" >Assignment Name={assignment?.title}</label>
             <input id="wd-name" value="A1 - ENV + HTML"  className="form-control mb-2"/><br /><br />
             <textarea id="wd-description" className="form-control mb-2">
                 The assignment is available onlineLinks to an external site.
@@ -20,7 +32,7 @@ const  AssignmentEditor=() =>{
          
                  <div className="d-flex">
                     <div    className="w-50 pe-5">
-                         <label className="float-end"htmlFor="wd-points" >Points</label>
+                         <label className="float-end"htmlFor="wd-points" >Points:</label>
                     </div>
                     <div>
                         <input id="wd-points" className="form-control mb-2" value={100} />

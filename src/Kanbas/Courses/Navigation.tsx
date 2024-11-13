@@ -1,9 +1,25 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link, useParams, useLocation } from "react-router-dom";
+const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People"];
 
-const CoursesNavigation=()=> {
+const CoursesNavigation = () => {
+  const { cid } = useParams();
+  const location = useLocation();
+
+  console.log("Current Path:", location.pathname);
   return (
-    <div id="wd-courses-navigation"  className="wd list-group fs-5 rounded-0">
-      <Link id="wd-course-home-link"    to="/Kanbas/Courses/1234/Home"  className="list-group-item active border border-0">Home</Link>
+    <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
+      <ul>
+        {links.map((link) => (
+          <li key={link}>
+            <NavLink
+              to={`/courses/${cid}/${link.toLowerCase()}`}
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              {link}
+            </NavLink>
+          </li>
+        ))}
+        {/* /*<Link id="wd-course-home-link"    to="/Kanbas/Courses/1234/Home"  className="list-group-item active border border-0">Home</Link>
       <Link id="wd-course-modules-link" to="/Kanbas/Courses/1234/Modules" className="list-group-item text-danger border border-0">Modules
         </Link>
       <Link id="wd-course-piazza-link"  to="/Kanbas/Courses/1234/Piazza" className="list-group-item text-danger border border-0">Piazza</Link>
@@ -12,8 +28,11 @@ const CoursesNavigation=()=> {
           Assignments</Link>
       <Link id="wd-course-assignments-link" to="/Kanbas/Courses/1234/Quizzes" className="list-group-item text-danger border border-0">Quizzes
         </Link>
-    
-      <Link id="wd-course-people-link"  to="/Kanbas/People"className="list-group-item text-danger border border-0">People</Link>
+     */}
+        {/* <Link id="wd-course-people-link"  to="/Kanbas/People"className="list-group-item text-danger border border-0">People</Link> */}
+      </ul>
     </div>
-);}
+
+  );
+}
 export default CoursesNavigation;

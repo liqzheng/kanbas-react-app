@@ -1,56 +1,72 @@
-
-import { BsGripVertical } from "react-icons/bs";
-import GreenCheckmark from "./GreenCheckmark";
-import { useParams } from "react-router";
-import * as db from "../../Database";
-import { Routes, Route, Navigate } from "react-router";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { addModule, editModule, updateModule, deleteModule } from "./reducer";
 import ModulesControls from "./ModulesControls";
-import LessonControlButtons from "./LessonControlButtons";
-const Modules = () => {
-  const { cid } = useParams();
-  const modules = db.modules;
+import ModuleControlButtons from "./ModuleControlButtons";
+//import { RootState } from "../../store"; // Assuming a defined root store type
+
+export default function Modules() {
+  const { cid } = useParams<{ cid: string }>();
+  const [moduleName, setModuleName] = useState(""); // Temporary name state for adding new module
+  const { modules } = useSelector((state: any) => state.modulesReducer);
+
+
+  const dispatch = useDispatch();
+
+  const handleAddModule = () => {
+    if (moduleName.trim()) {
+      dispatch(addModule({ name: moduleName, course: cid }));
+      setModuleName(""); // Clear the input after adding
+    }
+  };
+
   return (
-    <div>
-      <ModulesControls /><br /><br /><br /><br />
+    <div className="wd-modules">
+      {/* Module Controls Component */}
+      <ModulesControls
+        moduleName={moduleName}
+        setModuleName={setModuleName}
+        addModule={handleAddModule}
+      />
+
+      {/* List of Modules */}
       <ul id="wd-modules" className="list-group rounded-0">
-        {modules
-          .filter((module: any) => module.course === cid)
-          .map((module: any) => (
+        {modules.map((module: any) => (
+          <li key={module._id} className="list-group-item">
+            {/* Display or Edit Module Name */}
+            {!module.editing ? (
+              <span>{module.name}</span>
+            ) : (
+              <input
+                className="form-control w-50 d-inline-block"
+                defaultValue={module.name}
+                onChange={(e) => 
+                  dispatch(updateModule({ ...module, name: e.target.value }))
+                }
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    dispatch(updateModule({ ...module, editing: false }));
+                  }
+                }}
+              />
+            )}
 
-            <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
-              <div className="wd-title p-3 ps-2 bg-secondary">
-                <BsGripVertical className="me-2 fs-3" />
-                {module.name}
-                <ModulesControls />
-              </div>
-              {module.lessons && (
-                <ul className="wd-lessons list-group rounded-0">
-                  {module.lessons.map((lesson: any) => (
-
-                    <li className="wd-lesson list-group-item p-3 ps-1">
-                      <BsGripVertical className="me-2 fs-3" />
-                      {lesson.name}
-                      <LessonControlButtons />
-                    </li>))}
-
-
-
-                </ul>)}
-            </li>))}
+            {/* Control Buttons */}
+            <ModuleControlButtons
+              moduleId={module._id}
+              deleteModule={() => dispatch(deleteModule(module._id))}
+              editModule={() => dispatch(editModule(module._id))}
+            />
+          </li>
+        ))}
       </ul>
-      <Routes>
-        <Route path="/ModulesControles" element={<ModulesControls />} />
-
-        <Route path="/GreenCheckmark" element={<GreenCheckmark />} />
-        <Route path="/LessonControButtons" element={<LessonControlButtons />} />
-
-
-
-      </Routes>
-
-
     </div>
-  )
+  );
 }
 
-export default Modules;
+
+
+
+
+

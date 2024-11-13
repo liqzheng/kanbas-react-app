@@ -19,6 +19,7 @@ import Positions from "./Positions";
 import ReactIcons from "./ReactIcons";
 import ScreenSizeLable from "./ScreenSizeLable";
 import Zindex from "./Zindex";
+import TodoForm from "../Lab4/ReduxExamples/todos/TodoForm";
 export default function Lab2() {
     return (
         
@@ -26,6 +27,7 @@ export default function Lab2() {
 
 
         <div className="container">
+            <TodoForm />
             <BackgroundColors />
             <BootstrapForms />
             <BootstrapGrids />

@@ -3,11 +3,14 @@ import { Route, Routes, Navigate } from "react-router";
 import TOC from "./TOC";
 import Lab2 from "./Lab2";
 import Lab3 from "./Lab3";
-
+import store from "./store";
+import { Provider } from "react-redux";
 
 const Labs=()=> {
   return (
-    <div className="container">
+    <Provider store={store}>
+
+    <div className="container-fluid">
       
       <h1>Labs</h1>
       <TOC />
@@ -18,6 +21,7 @@ const Labs=()=> {
         <Route path="Lab3/*" element={<Lab3 />} />
       </Routes>
     </div>
+    </Provider>
   );
 }
 export default Labs;

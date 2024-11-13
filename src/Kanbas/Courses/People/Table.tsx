@@ -2,9 +2,16 @@ import { FaUserCircle } from "react-icons/fa";
 import React from "react";
 import { useParams } from "react-router-dom";
 import * as db from "../../Database";
+
+
+
+
 const PeopleTable = () => {
+
     const { cid } = useParams();
+
     const { users, enrollments } = db;
+
     return (
         <div id="wd-people-table">
             <table className="table table-striped">
