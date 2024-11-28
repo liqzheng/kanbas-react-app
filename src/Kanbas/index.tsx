@@ -38,10 +38,10 @@ const Kanbas = () => {
             <div className="wd-main-content-offset p-3">
                 <Routes>
                     <Route path="/" element={<Navigate to="Dashboard" />} />
-                    <Route path="Account/*" element={<Account />} />
+                    <Route path="/Account/*" element={<Account />} />
                     
 
-                    <Route path="Dashboard" element={
+                    <Route path="/Dashboard" element={
                         <ProtectedRoute>
                             <Dashboard
                                 courses={courses}
@@ -51,13 +51,13 @@ const Kanbas = () => {
                                 deleteCourse={deleteCourse}
                                 updateCourse={updateCourse} />
                         </ProtectedRoute>} />
-                    <Route path="Courses/:cid/*" element=
+                    <Route path="/Courses/:cid/*" element=
                         {<ProtectedRoute>
                             <Courses courses={courses} />
                         </ProtectedRoute>} />
 
-                    <Route path="Calendar" element={<h1>Calendar</h1>} />
-                    <Route path="Inbox" element={<h1>Inbox</h1>} />
+                    <Route path="/Calendar" element={<h1>Calendar</h1>} />
+                    <Route path="/Inbox" element={<h1>Inbox</h1>} />
                 </Routes>
             </div>
         </div>);
