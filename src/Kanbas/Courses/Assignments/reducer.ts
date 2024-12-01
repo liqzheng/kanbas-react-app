@@ -1,35 +1,26 @@
+import { createSlice } from "@reduxjs/toolkit";
+import * as db from "../../Database";
 
-import {createSlice} from "@reduxjs/toolkit";
-import {assignments} from "../../Database";
-import reducer from "../Modules/reducer";
-const initialState={
-    assignments: assignments,
-}
+const initialState = db.assignments;
 
 const assignmentsSlice = createSlice({
   name: "assignments",
   initialState,
   reducers: {
-    addAssignment: (state, { payload: assignment }) => {
-      const newAssignment: any = {
-        ...assignment,
-        _id: new Date().getTime().toString(),
-      };
-      state.assignments = [...state.assignments, newAssignment] as any;
+    addAssignment(state, action) {
+      state.push(action.payload);
     },
-    deleteAssignment: (state, { payload: assignmentId }) => {
-      state.assignments = state.assignments.filter(
-        (a: any) => a._id !== assignmentId
-      );
+    deleteAssignment(state, action) {
+      return state.filter(assignment => assignment._id !== action.payload);
     },
-    updateAssignment: (state, { payload: updatedAssignment }) => {
-      state.assignments = state.assignments.map((a: any) =>
-        a._id === updatedAssignment._id ? updatedAssignment : a
-      ) as any;
+    updateAssignment(state, action) {
+      const index = state.findIndex(assignment => assignment._id === action.payload._id);
+      if (index !== -1) {
+        state[index] = action.payload;
+      }
     },
   },
 });
 
-export const { addAssignment, deleteAssignment, updateAssignment } =
-  assignmentsSlice.actions;
+export const { addAssignment, deleteAssignment, updateAssignment } = assignmentsSlice.actions;
 export default assignmentsSlice.reducer;

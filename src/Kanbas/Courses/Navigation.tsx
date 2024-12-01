@@ -12,7 +12,7 @@ const CoursesNavigation = () => {
         {links.map((link) => (
           <li key={link}>
             <NavLink
-              to={`/courses/${cid}/${link.toLowerCase()}`}
+              to={`/Kanbas/courses/${cid}/${link.toLowerCase()}`}
               className={({ isActive }) => (isActive ? "active-link" : "")}
             >
               {link}

@@ -1,3 +1,4 @@
+import { start } from "repl";
 import TodoItem from "./TodoItem";
 import todos from "./todos.json";
 const TodoList = () => {
@@ -8,7 +9,8 @@ const TodoList = () => {
        { todos.map(todo => {
            return(<TodoItem todo={todo}/>);
          })}
-     </ul><hr/>
+     </ul>
+     <hr/>
    </>
  );
 }
