@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { addAssignment, updateAssignment } from "./reducer";
+import { addAssignment, deleteAssignment } from "./reducer";
 
 export default function AssignmentEditor() {
   const { id } = useParams();
@@ -29,7 +29,7 @@ export default function AssignmentEditor() {
     }
 
     if (existingAssignment) {
-      dispatch(updateAssignment(assignment));
+      dispatch(deleteAssignment(assignment));
     } else {
       dispatch(addAssignment(assignment));
     }

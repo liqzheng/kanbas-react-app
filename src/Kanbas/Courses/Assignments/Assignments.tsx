@@ -7,9 +7,10 @@ export default function Assignments() {
   const dispatch = useDispatch();
   const assignments = useSelector((state: any) => state.assignments);
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (id: String) => {
+    console.log("ID to delete:", id); // Debugging step
     if (window.confirm("Are you sure you want to delete this assignment?")) {
-      dispatch(deleteAssignment(id));
+      dispatch(deleteAssignment(id)); // No need for 'id: String', just pass 'id'
     }
   };
 

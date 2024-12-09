@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addModule, editModule, updateModule, deleteModule } from "./reducer";
+
+
 import ModulesControls from "./ModulesControls";
 import ModuleControlButtons from "./ModuleControlButtons";
 //import { RootState } from "../../store"; // Assuming a defined root store type
-
+import { setModules, addModule, editModule, updateModule, deleteModule } from "./reducer";
+import { useState, useEffect } from "react";
 export default function Modules() {
   const { cid } = useParams<{ cid: string }>();
   const [moduleName, setModuleName] = useState(""); // Temporary name state for adding new module
@@ -13,6 +15,7 @@ export default function Modules() {
 
 
   const dispatch = useDispatch();
+  
 
   const handleAddModule = () => {
     if (moduleName.trim()) {
@@ -20,6 +23,8 @@ export default function Modules() {
       setModuleName(""); // Clear the input after adding
     }
   };
+  
+
 
   return (
     <div className="wd-modules">
